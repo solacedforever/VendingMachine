@@ -44,7 +44,7 @@ app.get('/machines/:machine_id/snacks', function(request, response) {
   client.query('SELECT * FROM item WHERE machine_id =$1', [request.params.machine_id],
     function(request, dbResponse) {
       response.json({
-        snacks: dbResponse.rows
+        snacks: dbResponse.rows[0]
       })
     });
 });
@@ -53,7 +53,7 @@ app.get('/machines/:machine_id/purchaseHistory', function(request, response) {
   client.query('SELECT * FROM purchase WHERE machine_id =$1', [request.params.machine_id],
     function(request, dbResponse) {
       response.json({
-        purchases: dbResponse.rows
+        purchases: dbResponse.rows[0]
       })
     });
 });

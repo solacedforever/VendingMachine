@@ -13,7 +13,7 @@ CREATE TABLE item(
   item_id SERIAL PRIMARY KEY,
   cost FLOAT,
   name TEXT,
-  amount INTEGER
+  amount INTEGER,
   machine_id INTEGER REFERENCES machine
 );
 
